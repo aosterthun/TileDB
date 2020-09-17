@@ -44,7 +44,9 @@ function(build_TileDB_example_cppapi TARGET)
 endfunction()
 
 # Get the example sources
-file(GLOB TILEDB_EXAMPLE_SOURCES_CPPAPI "*.cc")
+file(GLOB TILEDB_EXAMPLE_SOURCES_CPPAPI "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+message(STATUS "CURRENT_SOURCE_DIR:  ${CMAKE_CURRENT_SOURCE_DIR}")
+message(STATUS "TILEDB_EXAMPLE_SOURCES_CPPAPI :  ${TILEDB_EXAMPLE_SOURCES_CPPAPI}")
 
 # Iterate over all example sources and call the build function
 foreach(EXAMPLE_SOURCE ${TILEDB_EXAMPLE_SOURCES_CPPAPI})
